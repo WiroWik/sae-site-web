@@ -1,8 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Mono+One&display=swap');
+
+:root {
+    --main-bg : #EFF2F1;
+    --header-bg : #4059AD;
+    --second-bg : #6B9AC4;
+}
+
 body {
     margin: 0;
+    background-color: var(--main-bg);
 }
 #header {
-    background-color: blue;
+    background-color: var(--header-bg);
     display: flex;
 }
 
@@ -11,7 +21,42 @@ body {
     margin: 1%;
 }
 
+#header > h1 {
+    font-family: 'Anton', sans-serif;
+    
+}
+
+@media screen and (min-width: 601px) { /*Format PC*/
+    #header > h1 {
+        font-size: 150%;
+    }
+
+    #header {
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 600px) { /*Format Tel */
+    #header > h1 {
+        font-size: 100%;
+    }
+
+    #header {
+        flex-direction: column;
+    }
+}
+
 #logo-header {
-    width: 100px;
-    height: 100px;
+    width: 10%;
+}
+
+#nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-self: right;
+
+}
+
+.nav-item {
+    margin: 4%;
 }
