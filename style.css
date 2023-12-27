@@ -3,4 +3,15 @@ body {
 }
 #header {
     background-color: blue;
+    display: flex;
+}
+
+#header > * {
+    align-self: center;
+    margin: 1%;
+}
+
+#logo-header {
+    width: 100px;
+    height: 100px;
 }
