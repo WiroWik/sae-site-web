@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 :root {
     --main-bg : #EFF2F1;
@@ -14,16 +15,20 @@ body {
 #header {
     background-color: var(--header-bg);
     display: flex;
+    animation-name: slide-up;
+    animation-duration: 200ms;
+    animation-timing-function: ease-out;
+
 }
 
-#header > * {
+#header > * > * {
     align-self: center;
     margin: 1%;
 }
 
-#header > h1 {
-    font-family: 'Anton', sans-serif;
-    
+#header-left > h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: black;
 }
 
 @media screen and (min-width: 601px) { /*Format PC*/
@@ -46,17 +51,68 @@ body {
     }
 }
 
+#header-left {
+    display: flex;
+    flex-direction: left;
+    width: 60%;
+}
+
 #logo-header {
-    width: 10%;
+    width: 5%;
+    margin: 2%;
+}
+
+#logo-header:hover {
+    fill: #6B9AC4;
+    cursor: pointer;
 }
 
 #nav-bar {
     display: flex;
-    flex-direction: row;
-    justify-self: right;
+    flex-direction: row-reverse;
+    width: 40%;
+    margin-right: 2%;
+
+}
+
+#nav-bar > a {
+    text-decoration: none;
+    color: black;
 
 }
 
 .nav-item {
     margin: 4%;
+}
+
+.nav-link {
+    font-family: Nagoda;
+}
+
+#login-link {
+    width: 60px;
+    height: 60px;
+    background-color: #6B9AC4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+}
+
+#login-link:hover {
+    background-color: #ffffff00;
+    border-radius: 3%;
+    border-color: #6B9AC4;
+    border-style: solid;
+    border-radius: 100px;
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: initial;
+    }
 }
