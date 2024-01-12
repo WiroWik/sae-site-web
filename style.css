@@ -97,14 +97,29 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 100px;
+    border-color: #6B9AC4;
+    border-style: solid;
 }
 
 #login-link:hover {
     background-color: #ffffff00;
-    border-radius: 3%;
-    border-color: #6B9AC4;
-    border-style: solid;
-    border-radius: 100px;
+    cursor: pointer;
+    
+}
+
+.container {
+    background-color: var(--second-bg);
+    width: min-content;
+    height: min-content;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+#signup-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 10%;
 }
 
 @keyframes slide-up {
