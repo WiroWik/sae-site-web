@@ -15,7 +15,7 @@
                 <label for="email">Adresse Mail</label>
                 <input name="email" id="email" class="input-form glass" type="text">
                 <input type="submit" class="submit-form glass">
-                <a href=signup.php>Register</a>
+                <a href=register.php>Register</a>
             </form>
         </div>
     </body>
