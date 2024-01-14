@@ -10,15 +10,17 @@
         <?php
             require('header.php');
         ?>
-        <div class="container" id="signup-form">
+        <div class="container glass" id="signup-form">
             <form action= method="post">
                 <label for="nom">Nom</label>
-                <input name="nom" id="nom" type="text">
+                <input name="nom" id="nom" class="input-form glass" type="text">
                 <label for="prenom">Prénom</label>
-                <input name="prenom" id="prenom" type="text">
+                <input name="prenom" id="prenom" class="input-form glass" type="text">
+                <label for="email">Adresse Mail</label>
+                <input name="email" id="email" class="input-form glass" type="text">
                 <label for="naissance">Date de naissance</label>
-                <input name="naissance" id="naissance" type="date">
-                <input type="submit">
+                <input name="naissance" id="naissance" class="input-form glass" type="date">
+                <input type="submit" class="submit-form glass">
             </form>
         </div>
     </body>
