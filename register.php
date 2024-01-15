@@ -29,7 +29,7 @@ if (isset($_POST['email'])){
                 header('Location: index.php?error=1');
                 exit();
             } else {
-                $sql = "INSERT INTO `utilisateurs` (`id_user`, `nom`, `prenom`, `mail`, `mdp`, `connexion_lvl`, `registration_date`) VALUES (NULL, :nom, :prenom, :email, :password, '', '');";
+                $sql = "INSERT INTO `utilisateurs` (`id_user`, `nom`, `prenom`, `mail`, `mdp`, `connexion_lvl`, `registration_date`) VALUES (NULL, :nom, :prenom, :email, :password, 0, NULL);";
 
                 $query = $connexion->prepare($sql);
                 $query->bindValue(':nom', $_POST['nom'], PDO::PARAM_STR);

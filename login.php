@@ -11,7 +11,7 @@
             require('header.php');
         ?>
         <div class="container glass" id="signup-form">
-            <form method="post">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                 <label for="email">Adresse Mail</label>
                 <input name="email" id="email" class="input-form glass" type="text">
 
