@@ -13,18 +13,39 @@ if (isset($_POST['email'])){
         else{
             
             /* Query Prepare */
-            $sql = "INSERT INTO `utilisateurs` (`id_user`, `nom`, `prenom`, `mail`, `mdp`, `connexion_lvl`, `registration_date`) VALUES (NULL, :nom, :prenom, :email, :password, '', '');";
+
+            $sql="SELECT * FROM utilisateurs WHERE mail = :mail";
 
             $query = $connexion->prepare($sql);
-            $query->bindValue(':nom', $_POST['nom'], PDO::PARAM_STR);
-            $query->bindValue(':prenom', $_POST['prenom'], PDO::PARAM_STR);
-            $query->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
-            $query->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
+            $query->bindValue(':mail', $_POST['email'], PDO::PARAM_STR);
             $query->execute();
+            $members_array = $query->fetchAll();
+
+            $row_count = count($members_array);
+
+            // Check the number of rows that match the SELECT statement 
+            if($row_count==1) 
+            {
+                header('Location: index.php?error=1');
+                exit();
+            } else {
+                $sql = "INSERT INTO `utilisateurs` (`id_user`, `nom`, `prenom`, `mail`, `mdp`, `connexion_lvl`, `registration_date`) VALUES (NULL, :nom, :prenom, :email, :password, '', '');";
+
+                $query = $connexion->prepare($sql);
+                $query->bindValue(':nom', $_POST['nom'], PDO::PARAM_STR);
+                $query->bindValue(':prenom', $_POST['prenom'], PDO::PARAM_STR);
+                $query->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
+                $query->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
+                $query->execute();
+                header('Location: index.php?error=0');
+                exit();
+            }
+            
             unset($_POST['nom']);
             unset($_POST['prenom']);
             unset($_POST['mail']);
             unset($_POST['password']);
+            
         }
 
         $connexion=null;

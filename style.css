@@ -157,6 +157,15 @@ body {
     margin-top: 10%;
 }
 
+.error-register {
+    position: fixed;
+    font-size: larger;
+    width: max-content;
+    animation-name: slide-left;
+    animation-duration: 1500ms;
+    animation-timing-function: ease-out;
+}
+
 @keyframes slide-up {
     0% {
         transform: translateY(-100%);
@@ -166,3 +175,14 @@ body {
         transform: initial;
     }
 }
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: initial;
+    }
+}
+

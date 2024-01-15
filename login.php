@@ -14,6 +14,8 @@
             <form action= method="post">
                 <label for="email">Adresse Mail</label>
                 <input name="email" id="email" class="input-form glass" type="text">
+                <label for="password">Mot de passe</label>
+                <input name="password" id="password" class="input-form glass" type="password">
                 <input type="submit" class="submit-form glass">
                 <a href=register.php>Register</a>
             </form>
