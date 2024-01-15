@@ -2,7 +2,7 @@
 define('USER',"root"); 
 define('PASSWD',""); 
 define('SERVER',"localhost"); 
-define('BASE',"bd_plongee"); 
+define('BASE',"sddv_plongee"); 
 
 
 function dbconnect(){ 

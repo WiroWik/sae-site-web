@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 10 jan. 2024 à 10:20
+-- Généré le : lun. 15 jan. 2024 à 20:10
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -80,17 +80,19 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `mail` varchar(2555) NOT NULL,
   `mdp` varchar(2555) NOT NULL,
   `connexion_lvl` int(11) NOT NULL,
-  `registration_date` date NOT NULL,
+  `registration_date` date DEFAULT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `utilisateurs`
 --
 
 INSERT INTO `utilisateurs` (`id_user`, `nom`, `prenom`, `mail`, `mdp`, `connexion_lvl`, `registration_date`) VALUES
-(1, 'Perlato', 'Luka', 'luka.perlato@gmail.com', 'x8792NXRçd#j', 2, '2024-01-10'),
-(2, 'Le Berre', 'Léon', 'léon.leberre@gmail.com', 'G4yp0RMhh@', 2, '2024-01-10');
+(1, 'Perlato', 'Luka', 'luka.perlato@gmail.com', 'x8792NXRcd#j', 2, '2024-01-10'),
+(2, 'Le Berre', 'Léon', 'léon.leberre@gmail.com', 'G4yp0RMhh@', 2, '2024-01-10'),
+(3, 'Tom', 'Bertrand', 'tom.bertrand@gmail.com', 'J0cn390kj', 0, '2024-01-15'),
+(4, 'Lol', 'Lol', 'Lol@gmail.com', 'Lol', 0, NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
