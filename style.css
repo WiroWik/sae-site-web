@@ -15,7 +15,7 @@ body {
     background-image: url("medias/pattern.png");
 }
 #header {
-    background-color: var(--header-bg);
+    /*background-color: var(--header-bg);*/
     display: flex;
     animation-name: slide-up;
     animation-duration: 200ms;
@@ -94,13 +94,13 @@ body {
 #login-link {
     width: 60px;
     height: 60px;
-    background-color: #6B9AC4;
+    /*background-color: #6B9AC4;*/
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 100px;
-    border-color: #6B9AC4;
-    border-style: solid;
+    /*border-color: #6B9AC4;*/
+    /*border-style: solid;*/
 }
 
 #login-link:hover {
