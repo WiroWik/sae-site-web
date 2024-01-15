@@ -33,23 +33,20 @@
                     $dbname = "sddv_plongee";
 
                     $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-
                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
                     $sql = "SELECT * FROM utilisateurs WHERE mail = ? AND mdp = ?"; 
                     $stmt = $pdo->prepare($sql);
-
                     $stmt->execute([$inputEmail, $inputPassword]);
                     $user = $stmt->fetch();
                     session_start();
-                    if (isset($user["id_user"])) {
+
+                    if ($stmt->rowCount() > 0) {
                         echo 'Connexion reussie';
                         $_SESSION["connected"] = true;
                         header("Location: index.php");
                     } 
                     else {
-                        echo $inputEmail."   &   ".$inputPassword;
-                        echo "<a class='text'><br>Identifiant ou mot de passe incorrect.</a>";
+                        echo $stmt->rowCount()."<a class='text'><br>Identifiant ou mot de passe incorrect.</a>";
                     }
                 } 
                 catch (PDOException $e) {
