@@ -19,7 +19,7 @@
                 Partenaires
             </div>
         </a>
-        <a href="index.php">
+        <a href="shop.php">
             <div class="nav-item nav-link">
                 Boutique
             </div>
