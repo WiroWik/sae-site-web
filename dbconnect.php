@@ -7,13 +7,13 @@ define('PORT',"3306");
 
 
 function dbconnect(){ 
-  $dsn="mysql:dbname=".BASE.";host=".SERVER.";port=".PORT; 
+  $dsn="mysql:dbname=".BASE.";host=".SERVER.";port=".PORT; /*MySQL*/
   try{ 
     $connexion=new PDO($dsn,USER,PASSWD); 
     $connexion->exec("set names utf8"); //Support utf8
   } 
   catch(PDOException $e){
-    $dsn="mysql:dbname=".BASE.";host=".SERVER.";port=3307"; 
+    $dsn="mysql:dbname=".BASE.";host=".SERVER.";port=3307"; /*Maria DB*/
     try {
       $connexion=new PDO($dsn,USER,PASSWD); 
       $connexion->exec("set names utf8"); //Support utf8
