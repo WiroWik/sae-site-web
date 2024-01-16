@@ -12,9 +12,16 @@ function dbconnect(){
     $connexion=new PDO($dsn,USER,PASSWD); 
     $connexion->exec("set names utf8"); //Support utf8
   } 
-  catch(PDOException $e){ 
-    printf("Échec de la connexion: %s\n", $e->getMessage()); 
-    exit(); 
+  catch(PDOException $e){
+    $dsn="mysql:dbname=".BASE.";host=".SERVER.";port=3307"; 
+    try {
+      $connexion=new PDO($dsn,USER,PASSWD); 
+      $connexion->exec("set names utf8"); //Support utf8
+    }
+    catch(PDOException $e1) {
+      printf("Échec de la connexion: %s\n", $e1->getMessage()); 
+      exit(); 
+    }
   } 
   return $connexion; 
 } 
