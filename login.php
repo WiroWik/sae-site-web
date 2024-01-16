@@ -23,34 +23,35 @@
             </form>
         </div>
         <?php
+            require("dbconnect.php");
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $inputEmail = $_POST["email"];
-                $inputPassword = $_POST["password"];
-                try {
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $dbname = "sddv_plongee";
+                $connexion=dbconnect();
+                $sql="SELECT COUNT(*) FROM utilisateurs"; 
+                if(!$connexion->query($sql)) {
+                    echo "Pb d'accès à la bdd"; 
+                }
+                else {
+                    
+                    try {
+                        $sql = "SELECT * FROM utilisateurs WHERE mail = :mail AND mdp = :password"; 
+                        $query = $connexion->prepare($sql);
+                        $query->bindValue(':mail', $_POST['email'], PDO::PARAM_STR);
+                        $query->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
+                        $query->execute();
+                        $user = $query->fetch();
 
-                    $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    $sql = "SELECT * FROM utilisateurs WHERE mail = ? AND mdp = ?"; 
-                    $stmt = $pdo->prepare($sql);
-                    $stmt->execute([$inputEmail, $inputPassword]);
-                    $user = $stmt->fetch();
-                    session_start();
-
-                    if ($stmt->rowCount() > 0) {
-                        echo 'Connexion reussie';
-                        $_SESSION["connected"] = true;
-                        header("Location: index.php");
+                        if ($query->rowCount() > 0) {
+                            echo 'Connexion reussie';
+                            $_SESSION["connected"] = true;
+                            header("Location: membre.php");
+                        } 
+                        else {
+                            echo $query->rowCount()."<a class='text'><br>Identifiant ou mot de passe incorrect.</a>";
+                        }
                     } 
-                    else {
-                        echo $stmt->rowCount()."<a class='text'><br>Identifiant ou mot de passe incorrect.</a>";
+                    catch (PDOException $e) {
+                        echo "Erreur de connexion à la base de données : " . $e->getMessage();
                     }
-                } 
-                catch (PDOException $e) {
-                    echo "Erreur de connexion à la base de données : " . $e->getMessage();
                 }
             }
         ?>

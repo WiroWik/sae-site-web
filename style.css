@@ -88,7 +88,11 @@ body {
 }
 
 .nav-link {
-    font-family: Nagoda;
+    font-family: 'Poppins', sans-serif;;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
 }
 
 #login-link {

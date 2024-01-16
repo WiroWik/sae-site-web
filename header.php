@@ -1,3 +1,7 @@
+<?php
+    if (session_id() === "") session_start();
+    if (!isset($_SESSION["connected"])) $_SESSION["connected"] = false;
+?>
 <div id="header" class="glass">
     <div id="header-left">
         <?php echo file_get_contents("medias/logo.svg")?>
