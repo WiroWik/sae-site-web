@@ -190,3 +190,28 @@ body {
     }
 }
 
+.box {
+    margin: 5%;
+    display: flex;
+  }
+  
+  .one {
+    border: #4059AD;
+    border-style:solid;
+    margin: 5%;
+    flex: 1;
+  }
+  
+  .two {
+    border: #4059AD;
+    border-style:solid;
+    margin: 5%;
+    flex: 1;
+  }
+  
+  .three {
+    border: #4059AD;
+    border-style:solid;
+    margin: 5%;
+    flex: 1;
+  }
