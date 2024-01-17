@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 17 jan. 2024 à 20:36
+-- Généré le : mer. 17 jan. 2024 à 20:53
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -34,22 +34,10 @@ CREATE TABLE IF NOT EXISTS `competitions` (
   `nom_compet` varchar(2555) NOT NULL,
   `date_compet` date NOT NULL,
   `image_compet` varchar(2555) DEFAULT NULL,
+  `pays` varchar(255) NOT NULL,
+  `ville` varchar(255) NOT NULL,
+  `adresse` varchar(255) NOT NULL,
   PRIMARY KEY (`id_compet`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `lieu`
---
-
-DROP TABLE IF EXISTS `lieu`;
-CREATE TABLE IF NOT EXISTS `lieu` (
-  `id_lieu` int NOT NULL,
-  `pays` varchar(2555) NOT NULL,
-  `ville` varchar(2555) NOT NULL,
-  `adresse` varchar(2555) NOT NULL,
-  PRIMARY KEY (`id_lieu`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
