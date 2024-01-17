@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 17 jan. 2024 à 20:53
+-- Généré le : mer. 17 jan. 2024 à 20:56
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -30,7 +30,6 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `competitions`;
 CREATE TABLE IF NOT EXISTS `competitions` (
   `id_compet` int NOT NULL AUTO_INCREMENT,
-  `id_lieu` int NOT NULL,
   `nom_compet` varchar(2555) NOT NULL,
   `date_compet` date NOT NULL,
   `image_compet` varchar(2555) DEFAULT NULL,
