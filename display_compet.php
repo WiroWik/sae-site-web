@@ -9,25 +9,21 @@
     else {
         
         try {
-            $sql = "SELECT * FROM competitions"; 
+            $sql = "SELECT * FROM participants WHERE id_participant =".$_SESSION['id'].";"; 
             $query = $connexion->prepare($sql);
             $query->execute();
             $compet = $query->fetch(PDO::FETCH_LAZY);
             if ($query->rowCount() > 0) {
 
                 foreach ($connexion->query($sql) as $row) {
+                    $sql2 = "SELECT nom_compet FROM competitions LEFT JOIN participants ON participants.id_compet = competitions.id_compet WHERE participants.id_participant = ".$_SESSION['id'].";"; 
+                    $query2 = $connexion->prepare($sql);
+                    $query2->execute();
+                    $compet = $query->fetch();
                     echo "<div class='container-large compet glass'>".
-                    "<div class='container-large sidebar compet glass'>".
-                    "<h2>".$row['nom_compet']."</h2>".
-                    "<span class='bold'>Date : </span>". $row['date_compet'].
-                    "<span class='bold'>Pays : </span>". $row['pays'].
-                    "<span class='bold'>Ville : </span>". $row['ville'].
-                    "<span class='bold'>Adresse : </span>". $row['adresse'].
-                    "</div>".
-                    "<img
-                    class='img-compet'
-                    src=".$row['image_compet']."
-                    alt='Image de la compétition'/>".
+                    "<span class='bold'>Nom Compétition : </span><br>".$compet."<br>".
+                    "<span class='bold'>Score : </span><br>".$row['score']."<br>".
+                    "<span class='bold'>Position : </span>".$row['position'].
                     "</div>";
                 }
             } 

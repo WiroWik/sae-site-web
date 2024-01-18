@@ -157,12 +157,23 @@ body {
 
 .compet {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+.container-compet {
+    width: 100% - 25px;
+    height: max-content;
+    padding: 25px;
+    border-radius: 20px;
+    margin: 2%;
+    font-family: 'Poppins', sans-serif;
+    justify-items: center;
+    display: grid;
 }
 
 .img-compet {
-    width: 20%;
-    height: 10%;
+    height: 30%;
+    max-height: 600px;
     align-self: center;
     border-radius: 20px;
 }

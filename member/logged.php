@@ -16,7 +16,11 @@
     </div>
     <div class="container-inpage glass">
         <h1>Espace Membre</h1>
-        <p>Bienvenue dans votre espace membre dédié. Nous sommes ravis de vous accueillir dans cette plateforme exclusive conçue pour vous offrir un accès privilégié à vos résultats de tournois et simplifier la gestion de vos documents.</p>
+        <p>Bienvenue dans votre espace membre dédié. Nous sommes ravis de vous accueillir dans cette plateforme pour consulter vos résultats de tournois et simplifier l'envoi de vos documents.</p>
+        <div class="container-inpage glass">
+            <h2 class="bold">Compétitions</h2>
+            <?php require('display_compet.php') ?>
+        </div>
     </div>
 </div>
 <script type="text/javascript" src="logged.js"></script>

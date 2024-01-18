@@ -10,8 +10,6 @@
         <?php
             require('header.php');
         ?>
-        <div class="container-compet glass">
-            <?php require('display_planning.php') ?>
-        </div>
+        <h1>Hello World 👍</h1>
     </body>
 </html>

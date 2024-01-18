@@ -42,6 +42,7 @@
 
                         if ($query->rowCount() > 0) {
                             echo 'Connexion reussie';
+                            $_SESSION['id'] = $user->id_user;
                             $_SESSION['prenom'] = $user->prenom;
                             $_SESSION['nom'] = $user->nom;
                             $_SESSION['mail'] = $user->mail;

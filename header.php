@@ -20,7 +20,7 @@
                 Inscription
             </div>
         </a>
-        <a href="index.php">
+        <a href="partenaires.php">
             <div class="nav-item nav-link">
                 Partenaires
             </div>
