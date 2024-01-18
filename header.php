@@ -30,6 +30,11 @@
                 Boutique
             </div>
         </a>
+        <a href="planning.php">
+            <div class="nav-item nav-link">
+                Planning
+            </div>
+        </a>
     </div>
 </div>
 <script type="text/javascript" src="header.js"></script>

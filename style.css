@@ -108,9 +108,14 @@ body {
 }
 
 .auth-link:hover {
-    background-color: #ffffff00;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255,255,255,0.1));
     cursor: pointer;
     
+}
+
+#send-doc:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255,255,255,0.1));
+    cursor: pointer;
 }
 
 .container {
@@ -123,9 +128,9 @@ body {
 }
 
 .container-large {
-    width: max-content;
+    width: fit-content;
     height: max-content;
-    padding: 25px;
+    padding: 30px;
     border-radius: 20px;
     margin: 2%;
     font-family: 'Poppins', sans-serif;
@@ -139,6 +144,27 @@ body {
     font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: row;
+}
+
+.container-inpage {
+    width: 100% - 25px;
+    height: max-content;
+    padding: 25px;
+    border-radius: 20px;
+    margin: 2%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.compet {
+    display: flex;
+    flex-direction: row;
+}
+
+.img-compet {
+    width: 20%;
+    height: 10%;
+    align-self: center;
+    border-radius: 20px;
 }
 .bold {
     font-weight: bold;

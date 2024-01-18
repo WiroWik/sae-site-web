@@ -10,6 +10,6 @@
         <?php
             require('header.php');
         ?>
-        <h1>Hello World 👍</h1>
+        <?php require('display_planning.php') ?>
     </body>
 </html>
