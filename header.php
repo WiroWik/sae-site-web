@@ -35,6 +35,11 @@
                 Planning
             </div>
         </a>
+        <a href="photos.php">
+            <div class="nav-item nav-link">
+                Médias
+            </div>
+        </a>
     </div>
 </div>
 <script type="text/javascript" src="header.js"></script>

@@ -4,7 +4,8 @@
             <span class="bold">Prénom :</span><br> <?php echo $_SESSION['prenom']?><br>
             <span class="bold">Nom :</span><br> <?php echo $_SESSION['nom']?><br>
             <span class="bold">Adresse Mail :</span><br> <?php echo $_SESSION['mail']?><br>
-            <span class="bold">Date d'inscription :</span><br> <?php echo $_SESSION['registration_date']?><br>
+            <span class="bold">Date de naissance :</span><br> <?php echo $_SESSION['naissance']?><br>
+            <span class="bold">Date d'inscription :</span><br> <?php echo $_SESSION['registration_date']?>
         </div>
         <div class="container" id="signup-form">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">

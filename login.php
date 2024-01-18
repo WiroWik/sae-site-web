@@ -10,6 +10,7 @@
         <?php
             require('header.php');
         ?>
+        <h1 class="form-title">Se connecter</h1>
         <div class="container glass" id="signup-form">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                 <label for="email">Adresse Mail</label>
@@ -18,8 +19,15 @@
                 <label for="password">Mot de passe</label>
                 <input name="password" id="password" class="input-form glass" type="password">
 
+                <?php
+                    if (isset($_GET['isAuthValid'])) {
+                        if ($_GET['isAuthValid']) {
+                            echo "<p style='font-size : 13px;'>Mot de passe ou adresse mail invalide</p>";
+                        }
+                    }
+                ?>
                 <input type="submit" class="submit-form glass">
-                <a href=register.php>Register</a>
+                <a href=register.php></a>
             </form>
         </div>
         <?php
@@ -45,13 +53,14 @@
                             $_SESSION['id'] = $user->id_user;
                             $_SESSION['prenom'] = $user->prenom;
                             $_SESSION['nom'] = $user->nom;
+                            $_SESSION['naissance'] = $user->date_naissance;
                             $_SESSION['mail'] = $user->mail;
                             $_SESSION['registration_date'] = $user->registration_date;
                             $_SESSION["connected"] = true;
                             header("Location: membre.php");
                         } 
                         else {
-                            echo $query->rowCount()."<a class='text'><br>Identifiant ou mot de passe incorrect.</a>";
+                            header("Location: login.php?isAuthValid=false");
                         }
                     } 
                     catch (PDOException $e) {

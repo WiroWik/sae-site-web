@@ -201,6 +201,15 @@ body {
 
 }
 
+.form-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    margin-top: 10%;
+    text-align: center;
+    font-size: 50px;
+
+}
+
 .member-form {
     display: flex;
     flex-direction: column;
@@ -222,13 +231,49 @@ body {
     
 }
 
+.download-button {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    position : fixed;
+    bottom: 20px;
+    right: 20px;
+}
 
+.download-button:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255,255,255,0.1));
+    cursor: pointer;
+}
+
+.photo-media {
+    border-radius: 20px;
+    max-width: 40%;
+    margin: 25px;
+}
+
+.media-container {
+    display: grid;
+    flex-direction: column;
+    max-width: 50vw;
+    border-radius: 20px;
+    justify-items: center;
+}
+
+.titre-medias {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 5%;
+    font-family: 'Poppins', sans-serif;
+}
 
 #signup-form {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    margin-top: 10%;
+    margin-top: 1%;
 }
 
 .error-register {
