@@ -38,10 +38,14 @@
                         $query->bindValue(':mail', $_POST['email'], PDO::PARAM_STR);
                         $query->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
                         $query->execute();
-                        $user = $query->fetch();
+                        $user = $query->fetch(PDO::FETCH_LAZY);
 
                         if ($query->rowCount() > 0) {
                             echo 'Connexion reussie';
+                            $_SESSION['prenom'] = $user->prenom;
+                            $_SESSION['nom'] = $user->nom;
+                            $_SESSION['mail'] = $user->mail;
+                            $_SESSION['registration_date'] = $user->registration_date;
                             $_SESSION["connected"] = true;
                             header("Location: membre.php");
                         } 

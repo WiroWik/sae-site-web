@@ -122,6 +122,33 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.container-large {
+    width: max-content;
+    height: max-content;
+    padding: 25px;
+    border-radius: 20px;
+    margin: 2%;
+    font-family: 'Poppins', sans-serif;
+}
+.container-page {
+    width: 100% - 10px;
+    height: max-content;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 2%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: row;
+}
+.bold {
+    font-weight: bold;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
 .glass {
     background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
     backdrop-filter: blur(10px);
