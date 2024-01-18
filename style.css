@@ -198,6 +198,12 @@ body {
     border-radius: 100px;
     padding: 10px;
     font-family: 'Poppins', sans-serif;
+
+}
+
+.member-form {
+    display: flex;
+    flex-direction: column;
 }
 
 .submit-form {

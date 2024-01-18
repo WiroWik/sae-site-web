@@ -29,7 +29,11 @@ if (isset($_POST['email'])){
                 header('Location: index.php?error=1');
                 exit();
             } else {
-                $sql = "INSERT INTO `utilisateurs` (`id_user`, `nom`, `prenom`, `mail`, 'date_naissance', `mdp`, `connexion_lvl`, `registration_date`) VALUES (NULL, :nom, :prenom, :email, :naissance,:password, 0, NULL);";
+                $sql = "INSERT INTO `utilisateurs` (`id_user`, `nom`, `prenom`, `mail`, `date_naissance`, `mdp`, `connexion_lvl`, `registration_date`) VALUES (NULL, :nom, :prenom, :email, :naissance,:password, 0, :registration_date);";
+
+                $dateTime = new DateTime();
+
+                $currentDate = $dateTime->format('Y-m-d'); 
 
                 $query = $connexion->prepare($sql);
                 $query->bindValue(':nom', $_POST['nom'], PDO::PARAM_STR);
@@ -37,6 +41,7 @@ if (isset($_POST['email'])){
                 $query->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
                 $query->bindValue(':naissance', $_POST['naissance'], PDO::PARAM_STR);
                 $query->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
+                $query->bindValue(':registration_date', $currentDate, PDO::PARAM_STR);
                 $query->execute();
                 header('Location: index.php?error=0');
                 exit();
@@ -67,7 +72,7 @@ if (isset($_POST['email'])){
             require('header.php');
         ?>
         <div class="container glass" id="signup-form">
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="member-form">
                 <label for="nom">Nom</label>
                 <input name="nom" id="nom" class="input-form glass" type="text">
                 <label for="prenom">Prénom</label>
