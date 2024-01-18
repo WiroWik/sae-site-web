@@ -14,6 +14,7 @@
                 <input type="submit" class="submit-form glass" value="Envoyer le document">
             </form>
         </div>
+        <div class="glass" id="deconnecter">Se déconnecter</div>
     </div>
     <div class="container-inpage glass">
         <h1>Espace Membre</h1>

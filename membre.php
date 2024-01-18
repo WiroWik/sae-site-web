@@ -17,5 +17,8 @@
                 require("member/guest.php");
             }
         ?>
+        <?php
+            require('footer.php');
+        ?>
     </body>
 </html>

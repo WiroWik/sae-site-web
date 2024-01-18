@@ -13,6 +13,9 @@ body {
     margin: 0;
     /*background-color: var(--main-bg);*/
     background-image: url("medias/pattern.png");
+    display: flex;
+    flex-direction: column;
+    min-height: 125vh;
 }
 #header {
     /*background-color: var(--header-bg);*/
@@ -158,6 +161,7 @@ body {
 .compet {
     display: flex;
     flex-direction: column;
+    min-width: 70%;
 }
 
 .container-compet {
@@ -232,15 +236,16 @@ body {
 }
 
 .download-button {
-    width: 60px;
-    height: 60px;
+    width: 120px;
+    height: 120px;
     display: flex;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
     align-items: center;
     justify-content: center;
-    border-radius: 100px;
-    position : fixed;
-    bottom: 20px;
-    right: 20px;
+    z-index: 10;
+    
 }
 
 .download-button:hover {
@@ -252,6 +257,14 @@ body {
     border-radius: 20px;
     max-width: 40%;
     margin: 25px;
+}
+
+.container-desc {
+    width: fit-content;
+    border-radius: 20px;
+    padding: 25px;
+    margin: 0 auto;
+    font-size: 25px;
 }
 
 .media-container {
@@ -283,6 +296,17 @@ body {
     animation-name: slide-left;
     animation-duration: 1500ms;
     animation-timing-function: ease-out;
+}
+
+#deconnecter {
+    padding: 25px;
+    border-radius: 100px;
+    text-align: center;
+}
+
+#deconnecter:hover {
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.1));
+    cursor: pointer;
 }
 
 @keyframes slide-up {
@@ -330,3 +354,11 @@ body {
     margin: 5%;
     flex: 1;
   }
+
+#footer {
+    margin-top: auto;
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    
+}

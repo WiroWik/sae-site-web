@@ -13,5 +13,8 @@
         <div class="container-compet glass">
             <?php require('display_planning.php') ?>
         </div>
+        <?php
+            require('footer.php');
+        ?>
     </body>
 </html>

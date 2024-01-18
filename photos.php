@@ -11,7 +11,7 @@
             require('header.php');
         ?>
         <h1 class="titre-medias">Photos du club</h1>
-        <div class="container-larger media-container glass" style="margin : 0 auto">
+        <div class="container-larger media-container glass" style="margin : 0 auto; margin-bottom : 50px">
             <img
             src="medias/photo1.jpg"
             alt="Photo plongée"
@@ -32,6 +32,9 @@
             src="medias/photo5.jpg"
             alt="Photo plongée"
             class="photo-media">
-        <div>
+        </div>
+        <?php
+            require('footer.php');
+        ?>
     </body>
 </html>

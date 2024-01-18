@@ -15,7 +15,7 @@
             if ($query->rowCount() > 0) {
 
                 foreach ($connexion->query($sql) as $row) {
-                    $sql2 = "SELECT * FROM competitions INNER JOIN participants ON participants.id_compet = competitions.id_compet;"; 
+                    $sql2 = "SELECT * FROM competitions LEFT JOIN participants ON participants.id_compet = competitions.id_compet WHERE competitions.id_compet =".$row['id_compet'].";"; 
                     $query2 = $connexion->prepare($sql2);
                     $query2->execute();
                     $compet = $query2->fetch(PDO::FETCH_LAZY);

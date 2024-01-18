@@ -1,5 +1,5 @@
-const send_doc = document.getElementById("send-doc");
+const deconnecter = document.getElementById("deconnecter");
 
-send_doc.addEventListener("click", () => {
-    window.location.href = "index.php";
+deconnecter.addEventListener("click", () => {
+    window.location.href = "index.php?disconnected=true";
 });
