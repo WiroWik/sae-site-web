@@ -29,12 +29,13 @@ if (isset($_POST['email'])){
                 header('Location: index.php?error=1');
                 exit();
             } else {
-                $sql = "INSERT INTO `utilisateurs` (`id_user`, `nom`, `prenom`, `mail`, `mdp`, `connexion_lvl`, `registration_date`) VALUES (NULL, :nom, :prenom, :email, :password, 0, NULL);";
+                $sql = "INSERT INTO `utilisateurs` (`id_user`, `nom`, `prenom`, `mail`, 'date_naissance', `mdp`, `connexion_lvl`, `registration_date`) VALUES (NULL, :nom, :prenom, :email, :naissance,:password, 0, NULL);";
 
                 $query = $connexion->prepare($sql);
                 $query->bindValue(':nom', $_POST['nom'], PDO::PARAM_STR);
                 $query->bindValue(':prenom', $_POST['prenom'], PDO::PARAM_STR);
                 $query->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
+                $query->bindValue(':naissance', $_POST['naissance'], PDO::PARAM_STR);
                 $query->bindValue(':password', $_POST['password'], PDO::PARAM_STR);
                 $query->execute();
                 header('Location: index.php?error=0');
@@ -44,8 +45,8 @@ if (isset($_POST['email'])){
             unset($_POST['nom']);
             unset($_POST['prenom']);
             unset($_POST['mail']);
+            unset($_POST['naissance']);
             unset($_POST['password']);
-            
         }
 
         $connexion=null;
@@ -73,6 +74,8 @@ if (isset($_POST['email'])){
                 <input name="prenom" id="prenom" class="input-form glass" type="text">
                 <label for="email">Adresse Mail</label>
                 <input name="email" id="email" class="input-form glass" type="text">
+                <label for="naissance">Date de naissance</label>
+                <input name="naissance" id="naissance" class="input-form glass" type="date">
                 <label for="password">Mot de passe</label>
                 <input name="password" id="password" class="input-form glass" type="password">
                 <input type="submit" class="submit-form glass">

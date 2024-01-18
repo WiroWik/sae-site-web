@@ -6,7 +6,7 @@
             <span class="bold">Adresse Mail :</span><br> <?php echo $_SESSION['mail']?><br>
             <span class="bold">Date d'inscription :</span><br> <?php echo $_SESSION['registration_date']?><br>
         </div>
-        <div class="container glass" id="signup-form">
+        <div class="container" id="signup-form">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                 <label for="document">Envoyer un document</label>
                 <input name="document" id="document" class="input-form glass" type="file">
@@ -17,7 +17,7 @@
     <div class="container-inpage glass">
         <h1>Espace Membre</h1>
         <p>Bienvenue dans votre espace membre dédié. Nous sommes ravis de vous accueillir dans cette plateforme pour consulter vos résultats de tournois et simplifier l'envoi de vos documents.</p>
-        <div class="container-inpage glass">
+        <div class="container-inpage">
             <h2 class="bold">Compétitions</h2>
             <?php require('display_compet.php') ?>
         </div>

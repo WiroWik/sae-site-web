@@ -15,7 +15,7 @@
                 require("member/login_button.php");
             }
         ?>
-        <a href="signup.php">
+        <a href="register.php">
             <div class="nav-item nav-link">
                 Inscription
             </div>
