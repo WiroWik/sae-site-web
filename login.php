@@ -26,7 +26,7 @@
                         }
                     }
                 ?>
-                <input type="submit" class="submit-form glass">
+                <input type="submit" class="submit-form glass clickable">
                 <a href=register.php></a>
             </form>
         </div>

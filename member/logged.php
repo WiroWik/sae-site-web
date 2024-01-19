@@ -11,7 +11,7 @@
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                 <label for="document">Envoyer un document</label>
                 <input name="document" id="document" class="input-form glass" type="file">
-                <input type="submit" class="submit-form glass" value="Envoyer le document">
+                <input type="submit" class="submit-form glass clickable" value="Envoyer le document">
             </form>
         </div>
         <div class="glass" id="deconnecter">Se déconnecter</div>

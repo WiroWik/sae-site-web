@@ -25,11 +25,6 @@
                 Partenaires
             </div>
         </a>
-        <a href="shop.php">
-            <div class="nav-item nav-link">
-                Boutique
-            </div>
-        </a>
         <a href="planning.php">
             <div class="nav-item nav-link">
                 Planning
